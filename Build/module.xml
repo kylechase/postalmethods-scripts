@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules>
+	<!-- A module xml file can define multiple modules -->
+	<module>
+		<id>kymera.postalmethods</id>
+		<name>Kymera Postal Methods Scripts</name>
+		<description>Adds the ability to send snail mail via a postal methods account</description>
+		<version>@VERSION@</version>
+		<license>license.html</license>
+        <documentation>manual.pdf</documentation>
+		<requiredignitionversion>@IGNITION@</requiredignitionversion>
+		<requiredframeworkversion>@FRAMEWORK@</requiredframeworkversion>
+		<freemodule>true</freemodule>
+		
+		<jar scope="CD">kymera-postalmethods-scripts-client.jar.pack.gz</jar>
+		<jar scope="D">kymera-postalmethods-scripts-designer.jar.pack.gz</jar>
+		<jar scope="CD">kymera-postalmethods-scripts-common.jar.pack.gz</jar>
+        <jar scope="G">kymera-postalmethods-scripts-common.jar</jar>
+		<jar scope="G">kymera-postalmethods-scripts-gateway.jar</jar>
+        <jar scope="D">commons-codec-1.9.jar.pack.gz</jar>
+        <jar scope="CD">postalmethods.jar.pack.gz</jar>
+        <jar scope="G">postalmethods.jar</jar>
+        <jar scope="CD">axis.jar.pack.gz</jar>
+        <jar scope="G">axis.jar</jar>
+        <jar scope="CD">saaj.jar.pack.gz</jar>
+        <jar scope="G">saaj.jar</jar>
+        <jar scope="CD">jaxrpc.jar.pack.gz</jar>
+        <jar scope="G">jaxrpc.jar</jar>
+        <jar scope="CD">commons-discovery-0.2.jar.pack.gz</jar>
+        <jar scope="G">commons-discovery-0.2.jar</jar>
+        <jar scope="CD">wsdl4j-1.5.1.jar.pack.gz</jar>
+        <jar scope="G">wsdl4j-1.5.1.jar</jar>
+        <jar scope="CD">javax.mail.jar.pack.gz</jar>
+        <jar scope="G">javax.mail.jar</jar>
+		
+		<hook scope="C">com.kymera.scripting.postalmethods.ClientHook</hook>
+		<hook scope="D">com.kymera.scripting.postalmethods.DesignerHook</hook>
+		<hook scope="G">com.kymera.scripting.postalmethods.GatewayHook</hook>
+		
+		<depends scope="D">fpmi</depends>
+	</module>
+</modules>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ignition-sdk-7.7">
+    <CLASSES>
+      <root url="file://$API_DIR$/ignition-sdk-7.7.0" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$API_DIR$/ignition-sdk-7.7.0" recursive="false" />
+  </library>
+</component>

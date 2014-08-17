@@ -1,0 +1,43 @@
+<project name="KymeraScriptsModuleBuild" default="BuildAndInstallModule">
+
+    <import file="../../common/build/build_base.xml" />
+
+    <property name="project.type" value="modules" />
+
+    <target name="BuildAndInstallModule" depends="Clean, Build, Deploy" />
+
+    <target name="Build">
+
+        <path id="build.paths">
+            <fileset dir="${api.dir}/ignition-sdk-7.7.0" includes="*.jar" />
+            <fileset dir="${api.dir}/pmjava" includes="*.jar" />
+            <fileset dir="${api.dir}/javamail" includes="*.jar" />
+            <fileset dir="${api.dir}/commons-codec-1.9" includes="*.jar" />
+            <fileset dir="${build.dir}/bin" includes="*/dist/*.jar" />
+        </path>
+
+        <antcall target="MakeProject" inheritRefs="true" />
+
+        <path id="pack.paths">
+            <fileset dir="${build.dir}/bin/Common/dist" includes="*.jar" />
+            <fileset dir="${build.dir}/bin/Client/dist" includes="*.jar" />
+            <fileset dir="${build.dir}/bin/Designer/dist" includes="*.jar" />
+            <fileset dir="${api.dir}/commons-codec-1.9" includes="*.jar" />
+            <fileset dir="${api.dir}/pmjava" includes="*.jar" />
+            <fileset dir="${api.dir}/javamail" includes="*.jar" />
+        </path>
+
+        <path id="copy.paths">
+            <fileset dir="${build.dir}/bin/Common/dist" includes="*.jar" />
+            <fileset dir="${build.dir}/bin/Gateway/dist" includes="*.jar" />
+            <fileset dir="${api.dir}/pmjava" includes="*.jar" />
+            <fileset dir="${api.dir}/javamail" includes="*.jar" />
+        </path>
+
+        <antcall target="MakeModule" inheritRefs="true">
+            <param name="ignition.targets" value="7.7" />
+            <!--param name="meta.file" value="com/kymera/scripting/utility-scripts.properties" /-->
+        </antcall>
+    </target>
+
+</project>
